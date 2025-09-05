@@ -1,5 +1,5 @@
 # GuviProject3
-#🏠 House Price Predictor
+# 🏠 House Price Predictor
 
 A machine learning project to predict housing prices in Bengaluru based on key features like area (sqft), number of bedrooms (BHK), bathrooms, and location.
 
