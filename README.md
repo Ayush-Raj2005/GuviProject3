@@ -1,103 +1,71 @@
 # GuviProject3
-🏠 House Price Predictor
+#🏠 House Price Predictor
 
 A machine learning project to predict housing prices in Bengaluru based on key features like area (sqft), number of bedrooms (BHK), bathrooms, and location.
 
-📌 Problem Statement
 
-Estimating house prices manually can be inconsistent and error-prone. This project uses Scikit-Learn regression models to automate the prediction process and deliver more reliable and data-driven results.
+## ⚙️ Features  
+- **Data Preprocessing**: handling missing values, encoding categorical variables, outlier removal  
+- **Exploratory Data Analysis (EDA)**: histograms, scatter plots, bar charts, correlation heatmap  
+- **Feature Engineering**: BHK extraction, price per sqft calculation, location grouping  
+- **Model Building**: Linear Regression, Lasso, Ridge regression using Scikit-Learn pipelines  
+- **Model Evaluation**: R² score 
+- **Real-time Prediction**: input house details and get predicted price  
 
-Key Question:
-👉 How can we build a regression model to predict house prices based on housing features?
+---
 
-🎯 Objectives & Deliverables
+## 📊 Dataset  
+- **Source:** Bengaluru House Price Dataset  
+- **Features:**  
+  - `location` – location of the property  
+  - `total_sqft` – total area in square feet  
+  - `bath` – number of bathrooms  
+  - `bhk` – number of bedrooms (derived from size column)  
+  - `price` – target variable (in Lakhs)  
 
-🧹 Cleaned dataset with missing values handled, encoded locations, and outliers removed
+---
 
-📊 EDA visualizations (histograms, scatterplots, heatmaps)
+## 🛠️ Tech Stack  
+- **Language:** Python  
+- **Libraries:**  
+  - Data Processing → Pandas, NumPy  
+  - Visualization → Matplotlib, Seaborn  
+  - Machine Learning → Scikit-Learn  
 
-🤖 Regression models (Linear, Ridge, Lasso) trained & compared
+---
 
-📈 Performance evaluation using R² and MSE
+## 🚀 Implementation Steps  
 
-🏠 Prediction pipeline for new house listings
+### 🔹 Data Cleaning & Preprocessing  
+- Handle missing values (mode/median imputation)  
+- Encode categorical features (OneHotEncoding)  
+- Remove outliers (based on sqft per BHK and price per sqft)  
 
-⚙️ Features
+### 🔹 Exploratory Data Analysis (EDA)  
+- Price distribution  
+- Area vs Price  
+- BHK vs Price  
+- Location analysis  
+- Correlation heatmap  
 
-Data preprocessing (null handling, feature engineering, outlier removal)
+### 🔹 Model Building  
+- Linear Regression  
+- Lasso Regression  
+- Ridge Regression  
+- Pipelines with scaling & encoding  
 
-Price distribution & correlation analysis
+### 🔹 Model Evaluation  
+- R² score comparison  
+- Test vs Predicted price visualization
 
-OneHotEncoding for categorical features
+### 📈 Results
 
-Machine learning pipelines with scaling & regression
+The Linear Regression and Ridge Regression models performed better compared to Lasso.
 
-Real-time prediction for new house details
+Location, area, and number of rooms strongly influence price.
 
-📊 Dataset
+Example Prediction:
 
-Source: Bengaluru House Price Dataset
+Input: 1200 sqft, 3 BHK, 2 Bath, Location = Whitefield
 
-Features:
-
-location → property location
-
-total_sqft → total area in square feet
-
-bath → number of bathrooms
-
-bhk → number of bedrooms (derived from size)
-
-price → target variable (in Lakhs)
-
-🛠️ Tech Stack
-
-Programming Language: Python 
-
-Libraries:
-
-Data Processing → Pandas, NumPy
-
-Visualization → Matplotlib, Seaborn
-
-Machine Learning → Scikit-Learn
-
-🚀 Implementation Steps
-
-1.Data Cleaning & Preprocessing
-
- -Filled missing values (mode, median)
-
- -Converted sqft ranges → numeric
-
- -Extracted bhk from size
-
- -Grouped rare locations as "other"
-
-2.Outlier removal (sqft per BHK & price per sqft)
-
- -Exploratory Data Analysis (EDA)
-
- -Price distribution plot
-
- -Area vs Price scatterplot
-
- -Average price per BHK bar chart
-
- -Correlation heatmap
-
-3.Model Building
-
- -Linear Regression ✅
-
- -Ridge Regression 📐
-
- -Lasso Regression 🔒
-
-4.Evaluation
-
- -R² Score comparison
-
- -Mean Squared Error (MSE)
-
- -Predicted vs Actual price check
+Output: 54.64868614337528 (Lakhs)
